@@ -2,12 +2,17 @@ const express = require('express');
 const router = express.Router();
 const Murder = require('../models/Murder');
 
-router.get('/', (request, response) => {
-    response.send('Tamon on porra');
+router.get('/murders', async (request, response) => {
+    try{
+        const getMurder = await Murder.find();
+        response.json(getMurder);
+    } catch (err) {
+        response.json({ message : err });
+    }
 });
 
 router.post('/murder', async (request, response) => {
-
+    
     const murder = new Murder({
         ANO_BO: request.body.ANO_BO,
         NUM_BO: request.body.NUM_BO,
