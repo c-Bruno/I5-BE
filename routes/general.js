@@ -82,4 +82,18 @@ router.post('/murder', async (request, response) => {
 
 });
 
+router.delete('delmurder', async (request, response) => {
+    try {
+        const removedurder = await Murder.remove({
+            date:{
+              $lte : new Date(2018, 1, 1)
+            }
+          })
+    } catch (error) {
+        
+    }
+    db.inventory.find( { qty: { $lte: 20 } } )
+})
+
+
 module.exports = router;
