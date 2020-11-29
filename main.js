@@ -18,9 +18,11 @@ mongoose.connect('mongodb+srv://dbProjectF:admin@cluster0.fckbf.mongodb.net/dbMu
 
 //My Routes
 const murderRoute = require('./routes/general');
+const sugestionRoute = require('./routes/sugestion');
 
 
 //Setting Routes
 app.use('/', murderRoute);
+app.use('/sugestion/', sugestionRoute);
 
 app.listen(3000);
