@@ -10,27 +10,11 @@ router.get('/', async (request, response) => {
         Meses = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',]
         Hmes = [];
 
-
-
         for (const mes of Meses) {
             const count = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)'+ mes +'(\/)(2019)' }});
             console.log(count);
             Hmes.push(count);
         }
-
-            // Hmes[0] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(01)(\/)(2019)' }});
-            // Hmes[1] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(02)(\/)(2019)' }});  
-            // Hmes[2] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(03)(\/)(2019)' }});
-            // Hmes[3] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(04)(\/)(2019)' }});
-            // Hmes[4] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(05)(\/)(2019)' }});
-            // Hmes[5] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(06)(\/)(2019)' }});
-            // Hmes[6] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(07)(\/)(2019)' }});
-            // Hmes[7] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(08)(\/)(2019)' }});
-            // Hmes[8] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(09)(\/)(2019)' }});
-            // Hmes[9] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(10)(\/)(2019)' }});
-            // Hmes[10] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(11)(\/)(2019)' }});
-            // Hmes[11] = await Murder.countDocuments({ BO_EMITIDO: { $regex:  '^([0-2][0-9]|(3)[0-1])(\/)(12)(\/)(2019)' }});
-            
 
         response.send(Hmes);
     } catch (err) {
@@ -55,13 +39,6 @@ router.get('/countCor2019', async (request, response) => {
             Corcutis.push(count);
         }
 
-        // Corcutis[0] = await Murder.countDocuments({ANO_BO: "2019", CORCUTIS: Array[0]});
-        // Corcutis[1] = await Murder.countDocuments({ANO_BO: "2019", CORCUTIS: Array[1]});
-        // Corcutis[2] = await Murder.countDocuments({ANO_BO: "2019", CORCUTIS: Array[2]});
-        // Corcutis[3] = await Murder.countDocuments({ANO_BO: "2019", CORCUTIS: Array[3]});
-        // Corcutis[4] = await Murder.countDocuments({ANO_BO: "2019", CORCUTIS: Array[4]});
-        // Corcutis[5] = await Murder.countDocuments({ANO_BO: "2019", CORCUTIS: Array[5]});
-
         response.send(Corcutis);
     } catch (err) { 
         response.send({ message : err });
@@ -81,13 +58,6 @@ router.get('/countCor2018', async (request, response) => {
             console.log(count);
             Corcutis.push(count);
         }
-
-        // Corcutis[0] = await Murder.countDocuments({ANO_BO: "2018", CORCUTIS: Array[0]});       
-        // Corcutis[1] = await Murder.countDocuments({ANO_BO: "2018", CORCUTIS: Array[1]});
-        // Corcutis[2] = await Murder.countDocuments({ANO_BO: "2018", CORCUTIS: Array[2]});
-        // Corcutis[3] = await Murder.countDocuments({ANO_BO: "2018", CORCUTIS: Array[3]});
-        // Corcutis[4] = await Murder.countDocuments({ANO_BO: "2018", CORCUTIS: Array[4]});
-        // Corcutis[5] = await Murder.countDocuments({ANO_BO: "2018", CORCUTIS: Array[5]});
 
         response.send(Corcutis);
     } catch (err) { 
@@ -109,13 +79,6 @@ router.get('/countCor2017', async (request, response) => {
             console.log(count);
             Corcutis.push(count);
         }
-
-        // Corcutis[0] = await Murder.countDocuments({ANO_BO: "2017", CORCUTIS: Array[0]});       
-        // Corcutis[1] = await Murder.countDocuments({ANO_BO: "2017", CORCUTIS: Array[1]});
-        // Corcutis[2] = await Murder.countDocuments({ANO_BO: "2017", CORCUTIS: Array[2]});
-        // Corcutis[3] = await Murder.countDocuments({ANO_BO: "2017", CORCUTIS: Array[3]});
-        // Corcutis[4] = await Murder.countDocuments({ANO_BO: "2017", CORCUTIS: Array[4]});
-        // Corcutis[5] = await Murder.countDocuments({ANO_BO: "2017", CORCUTIS: Array[5]});
 
         response.send(Corcutis);
     } catch (err) { 
